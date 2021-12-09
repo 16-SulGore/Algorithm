@@ -1,6 +1,6 @@
 ---
-name: 문제 해결
-about: ''
+name: 문제 출제
+about: 풀어야할 문제가 링크된 이슈입니다.
 title: ''
 labels: ''
 assignees: ''
