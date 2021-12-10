@@ -9,5 +9,4 @@ while num != "0" :
             
     num = input()
 
-for i in answer : 
-    print(i)
+print(i for i in answer)   
