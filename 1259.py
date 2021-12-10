@@ -1,9 +1,7 @@
 answer = []
+num = input()
 
-while True :
-    num = input()
-    if num == "0" : 
-        break
+while num != "0" :
 
     reverse_num = num[::-1]
 
@@ -11,6 +9,8 @@ while True :
         answer.append("yes")
     else :
          answer.append("no")
+            
+    num = input()
 
 for i in answer : 
     print(i)
