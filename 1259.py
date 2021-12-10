@@ -5,10 +5,7 @@ while num != "0" :
 
     reverse_num = num[::-1]
 
-    if num == reverse_num : 
-        answer.append("yes")
-    else :
-         answer.append("no")
+    answer.append("yes" if num == reverse_num else "no")
             
     num = input()
 
