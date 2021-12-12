@@ -21,12 +21,13 @@ while count_n != N :
         if count_six == 3 :
             for h in range(j,len(num)):
                 num[h] = 0
-            # count_n + 접미어로 붙일 수 있는 숫자의 개수  
-            if N > count_n + math.pow(10, len(num) - j ) - 1 : 
-                count_n += int(math.pow(10, len(num) - j) - 1)
+            # count_n + 접미어로 붙일 수 있는 숫자의 개수 
+            len_place_value = len(num) - j
+            if N > count_n + math.pow(10, len_place_value ) - 1 : 
+                count_n += int(math.pow(10, len_place_value) - 1)
             else :
                 alpha_num = N - count_n
-                for h in range(len(num) - j):
+                for h in range(len_place_value):
                     num[-(h+1)] = int(alpha_num % 10)
                     alpha_num = alpha_num / 10
                 count_n = N
