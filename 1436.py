@@ -1,4 +1,5 @@
 import math
+
 N = int(input())
 
 count_n = 0
@@ -12,8 +13,7 @@ while count_n != N :
     a = list(str(i)) # 카운트
     
     # num 앞에 a를 더함 1,6,6,6 -> 2,6,6,6 - ... -> 1,0,6,6,6 // a[1,0]
-    for j in reversed(a):
-        num.insert(0,int(j))
+    num = list(map(int, a)) + num
 
     count_six = 0
     for j in range(len(num)) : # 앞에서 부터 6의 개수를 셈
@@ -32,7 +32,6 @@ while count_n != N :
                 count_n = N
             break
                          
-
         if num[j] == 6 :
             count_six += 1
         else :
