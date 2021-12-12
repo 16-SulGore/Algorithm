@@ -38,6 +38,6 @@ while count_n != N :
     prefix += 1
 
 result = "".join(map(str, num))
-print(result.lstrip("0"))
+print(int(result))
         
        
