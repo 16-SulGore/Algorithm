@@ -3,14 +3,14 @@ import math
 N = int(input())
 
 count_n = 0
-i = 0
+prefix = 0
 
 while count_n != N :
 
     count_n += 1
 
     num = [6,6,6] # 시작 666
-    a = list(str(i)) # 카운트
+    a = list(str(prefix)) # 카운트
     
     # num 앞에 a를 더함 1,6,6,6 -> 2,6,6,6 - ... -> 1,0,6,6,6 // a[1,0]
     num = list(map(int, a)) + num
@@ -37,7 +37,7 @@ while count_n != N :
         else :
             count_six = 0
 
-    i += 1
+    prefix += 1
 
 result = "".join(map(str, num))
 print(result.lstrip("0"))
