@@ -29,15 +29,12 @@ while count_n != N :
                 alpha_num = N - count_n
                 for h in range(len_place_value):
                     num[-(h+1)] = int(alpha_num % 10)
-                    alpha_num = alpha_num / 10
+                    alpha_num /= 10
                 count_n = N
             break
-                         
-        if num[j] == 6 :
-            count_six += 1
-        else :
-            count_six = 0
 
+        count_six = 1 + count_six if num[j]==6 else 0                
+        
     prefix += 1
 
 result = "".join(map(str, num))
