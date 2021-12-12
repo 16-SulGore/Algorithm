@@ -15,10 +15,10 @@ while count_n != N :
     # num 앞에 a를 더함 1,6,6,6 -> 2,6,6,6 - ... -> 1,0,6,6,6 // a[1,0]
     num = list(map(int, a)) + num
 
-    count_six = 0
+    count_chain_six = 0
     for j in range(len(num)) : # 앞에서 부터 6의 개수를 셈
 
-        if count_six == 3 :
+        if count_chain_six == 3 :
             for h in range(j,len(num)):
                 num[h] = 0
             # count_n + 접미어로 붙일 수 있는 숫자의 개수 
@@ -33,7 +33,7 @@ while count_n != N :
                 count_n = N
             break
 
-        count_six = 1 + count_six if num[j]==6 else 0                
+        count_chain_six = 1 + count_chain_six if num[j]==6 else 0                
         
     prefix += 1
 
