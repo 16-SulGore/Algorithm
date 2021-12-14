@@ -3,7 +3,7 @@
 - 언어: Python
 - 개념 정리: [Notion](https://sulgore.notion.site/b27bb3cdd99b4613a4bd601b03f112ea)
 - 회의: Discord
-- 문제 풀이 사이트: [Backjoon SulGore그루 문제집](https://www.acmicpc.net/group/workbook/list/6864), [Solved.ac](https://solved.ac/class)
+- 문제 풀이 사이트: [Backjoon SulGore그룹 문제집](https://www.acmicpc.net/group/workbook/list/6864), [Solved.ac](https://solved.ac/class)
 - 규칙: [Wiki](https://github.com/16-SulGore/Algorithm/wiki)
 
 ## 진행
