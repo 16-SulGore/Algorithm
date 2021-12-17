@@ -1,12 +1,10 @@
 n = int(input())
-input_list = []
 comp_list = [0]
 count_num = 0
 result_list = []
 is_error = False
 
-for i in range(n) :
-    input_list.append(int(input()))
+input_list = [int(input()) for _ in range(n)]
 
 for i in range(n) :
 
