@@ -6,11 +6,11 @@ is_error = False
 
 input_list = [int(input()) for _ in range(n)]
 
-for i in range(n) :
+for i in range(n):
 
-    while input_list[i] != comp_list[-1] :
+    while input_list[i] != comp_list[-1]:
 
-        if input_list[i] > comp_list[-1] :
+        if input_list[i] > comp_list[-1]:
             comp_list.append(count_num)
             comp_list[-1] += 1
             count_num = max(count_num, comp_list[-1])
@@ -26,9 +26,9 @@ for i in range(n) :
     comp_list.pop()
     result_list.append("-")
 
-if is_error == True :
+if is_error:
     print("NO")
 
-else :
+else:
     for i in result_list:
         print(i)
