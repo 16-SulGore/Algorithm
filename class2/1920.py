@@ -6,7 +6,5 @@ m_list = list(map(int, input().split()))
 
 
 for m_num in m_list:
-    if m_num in n_list: 
-        print("1")
-    else:
-        print("0")
+    
+    print("1") if m_num in n_list else print("0")
