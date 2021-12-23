@@ -1,7 +1,3 @@
-N, M = map(int, input().split())
-arr = sorted(list(map(int, input().split())))
-result = []
-
 def dfs(num):
     if len(result) == M:
         print(" ".join(map(str, result)))
@@ -10,6 +6,10 @@ def dfs(num):
     for i in range(num, N):
         result.append(arr[i])
         dfs(i)
-        result.pop()         
-        
+        result.pop()  
+
+N, M = map(int, input().split())
+arr = sorted(list(map(int, input().split())))
+result = []       
+
 dfs(0)

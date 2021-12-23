@@ -1,6 +1,3 @@
-N, M = map(int, input().split())
-arr = []
-
 def dfs(num):
     if len(arr) == M:
         print(" ".join(map(str, arr)))
@@ -10,5 +7,8 @@ def dfs(num):
         arr.append(i)
         dfs(i)
         arr.pop()       
-          
+
+N, M = map(int, input().split())
+arr = []
+
 dfs(1)
