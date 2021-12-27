@@ -1,6 +1,7 @@
 # pyunit test
 import unittest
 
+# python3 -m unnittest test.py
 
 class Test(unittest.TestCase):
     def test_1918(self):
