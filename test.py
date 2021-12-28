@@ -75,3 +75,29 @@ class Test(unittest.TestCase):
         result = 14
         
         self.assertEqual(result, solution(N, K, backpack))
+    
+    def test_12865_edge(self):
+        from class4.ex_12865 import solution
+        N, K = 1, 2
+        backpack = [[1, 3] ]
+        result = 3
+        
+        self.assertEqual(result, solution(N, K, backpack))
+        
+    def test_12865_edge2(self):
+        from class4.ex_12865 import solution
+        N, K = 10, 999
+        backpack = [[46, 306],[60, 311],[33, 724],[18, 342],[57, 431],[49, 288],[12, 686],[89, 389],[82, 889],[16, 289]]
+        result = 4655
+        
+        self.assertEqual(result, solution(N, K, backpack))
+    
+    def test_12865_edge3(self):
+        from class4.ex_12865 import solution
+        N, K = 3, 5
+        backpack = [[4, 2], [3, 4], [1, 5]]
+        result = 9
+        
+        self.assertEqual(result, solution(N, K, backpack))
+    
+    
