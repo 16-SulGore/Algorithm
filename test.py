@@ -46,12 +46,14 @@ class Test(unittest.TestCase):
         solution(max)
 
     # ------분할 정복 방식-----
+    @unittest.skip("solved")
     def test_11444(self):
         from class4.ex_11444_div_con import solution
         n = 1000
 
         self.assertEqual(517691607, solution(n))
 
+    @unittest.skip("solved")
     def test_11444_range17(self):
         from class4.ex_11444_div_con import solution
         fib_list = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
@@ -60,7 +62,16 @@ class Test(unittest.TestCase):
         for i in range(2, len(fib_list)):
             self.assertEqual(fib_list[i], solution(i))
 
+    @unittest.skip("solved")
     def test_11444_time_limit(self):
         from class4.ex_11444_div_con import solution
         max = 1000000000000000000 - 1
         solution(max)
+
+    def test_12865(self):
+        from class4.ex_12865 import solution
+        N, K = 4, 7
+        backpack = [[6, 13], [4, 8], [3, 6], [5, 12]]
+        result = 14
+        
+        self.assertEqual(result, solution(N, K, backpack))
