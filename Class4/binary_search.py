@@ -20,5 +20,4 @@ while True:
     except:
         break
 
-for node in postorder(preorder):
-    print(node)
+print(node for node in postorder(preorder))
