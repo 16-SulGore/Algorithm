@@ -18,6 +18,6 @@ for _ in range(N):
     things.append([weight, value])
 
 result = 0
-dfs(0,0,0)
+dfs(num = 0, bag = 0, value = 0)
 
 print(result)
