@@ -4,27 +4,25 @@ from ..model.Node import Node
 
 class NodeTest(unittest.TestCase):
 
-    def testAddKey_whenAddKey_thenAppend(self):
-        # Given node and key
-        old = 1
-        node = Node(old)
-        new = 2
+    def testAddKey_whenAddSameKey_shouldAppendSameValueIndex(self):
+        # Given old node
+        old_node = Node()
+        old_node.add(1, "old")
+        
+        # When add new data
+        old_node.add(1, "new")
+        
+        # Then added same value index
+        self.assertEqual(2, len(old_node.values[0]))
 
-        # When add solo key
-        node.add_key(new)
+    def testAddKey_whenAddDiffKey_sholudNewValueIndex(self):
+        # Given old node
+        old_node = Node()
+        old_node.add(1, "old")
+        
+        # When add new data
+        old_node.add(2, "new")
 
-        # Then [old, new]
-        self.assertEqual([old, new], node.key)
-
-    def testAddKey_whenAddKeyList_thenPlus(self):
-        # Given node and key
-        old = 1
-        node = Node(old)
-        new = [2, 3]
-        expect = [1, 2, 3]
-
-        # When add solo key
-        node.add_key(new)
-
-        # Then [old, new]
-        self.assertEqual(expect, node.key)
+        # Then added diff value index
+        self.assertEqual(2, len(old_node.values))
+        self.assertEqual(1, len(old_node.values[0]))
