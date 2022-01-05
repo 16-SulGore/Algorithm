@@ -29,6 +29,21 @@ class Node:
                 self.values = self.values[:i] + [[value]] + self.values[i:]
                 break 
 
+        if len(self.keys) > self.MAX_ORDER:
+            self.__split()
+    
+    def __split(self):
+        # split to two child
+        left, right = Node(), Node()
+        mid = self.MAX_ORDER // 2
+        
+        left.keys, right.keys = self.keys[:mid], self.keys[mid:]
+        left.values, right.values = self.values[:mid], self.values[mid:]
+
+        self.keys = [right.keys[0]]
+        self.values = [left, right]
+        self.is_leaf = False
+        
     def __eq__(self, __o: object) -> bool:
         if type(__o) is Node:
             return self.keys == __o.keys
@@ -37,3 +52,8 @@ class Node:
     
     def __hash__(self) -> int:
         return sum(int(self.keys))
+    
+    def __str__(self) -> str:
+        #TODO
+        pass 
+    
