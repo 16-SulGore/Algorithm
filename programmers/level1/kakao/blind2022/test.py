@@ -14,7 +14,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, solution(id_list, report, k))
     
-    def test_신고_결과_받기_01(self):
+    def test_신고_결과_받기_02(self):
         from .ex_01 import solution
         
         id_list =["con", "ryan"]
