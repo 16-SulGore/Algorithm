@@ -33,7 +33,7 @@ class Test(unittest.TestCase):
         
         result = "bat.y.abcdefghi"
         
-        self.assertEqual(result, new_id)
+        self.assertEqual(result, solution(new_id))
 
     def test_신규_아이디_추천_02(self):
         from .ex_02 import solution
@@ -42,7 +42,7 @@ class Test(unittest.TestCase):
         
         result = "z--"
         
-        self.assertEqual(result, new_id)
+        self.assertEqual(result, solution(new_id))
 
     def test_신규_아이디_추천_03(self):
         from .ex_02 import solution
@@ -51,7 +51,7 @@ class Test(unittest.TestCase):
         
         result = "aaa"
         
-        self.assertEqual(result, new_id)
+        self.assertEqual(result, solution(new_id))
         
         
     def test_신규_아이디_추천_04(self):
@@ -61,7 +61,7 @@ class Test(unittest.TestCase):
         
         result = "123_.def"
         
-        self.assertEqual(result, new_id)
+        self.assertEqual(result, solution(new_id))
         
     def test_신규_아이디_추천_05(self):
         from .ex_02 import solution
@@ -70,4 +70,4 @@ class Test(unittest.TestCase):
         
         result = "abcdefghijklmn"
         
-        self.assertEqual(result, new_id)
+        self.assertEqual(result, solution(new_id))
