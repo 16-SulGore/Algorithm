@@ -185,3 +185,24 @@ class Test(unittest.TestCase):
         result = [4,1,2,3]
         
         self.assertEqual(result, solution(N, stages))
+
+    def test_1차_비밀지도_01(self):
+        from .ex_06 import solution
+        
+        n = 5
+        arr1 = [9, 20, 28, 18, 11]
+        arr2 = [30, 1, 21, 17, 28]
+        result = ['#####', '# # #', '### #', '#  ##', '#####']
+        
+        self.assertEqual(result, solution(n, arr1, arr2))
+
+    def test_1차_비밀지도_02(self):
+        from .ex_06 import solution
+        
+        n = 6
+        arr1 = [46, 33, 33 ,22, 31, 50]
+        arr2 = 	[27 ,56, 19, 14, 14, 10]
+        result = ['######', '###  #', '##  ##', ' #### ', ' #####', '### # ']
+        
+        self.assertEqual(result, solution(n, arr1, arr2))
+
