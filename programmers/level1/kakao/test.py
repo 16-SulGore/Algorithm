@@ -145,3 +145,13 @@ class Test(unittest.TestCase):
         result = "abcdefghijklmn"
         
         self.assertEqual(result, solution(new_id))
+
+    @unittest.skip("solved")
+    def test_숫자_문자열과_영단어(self):
+        from .ex_03 import solution
+        
+        s = ["one4seveneight", "23four5six7", "2three45sixseven", "123"]
+        result = [1478, 234567, 234567, 123]
+        
+        for i in range(len(s)):
+            self.assertEqual(result[i], solution(s[i]))
