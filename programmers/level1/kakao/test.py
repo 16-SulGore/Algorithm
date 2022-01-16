@@ -26,6 +26,7 @@ class Test(unittest.TestCase):
 
         self.assertEqual(result, solution(id_list, report, k))
 
+    @unittest.skip("solved")
     def test_신규_아이디_추천_1단계(self):
         from .ex_02 import level1
         
@@ -35,6 +36,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, level1(new_id))
 
+    @unittest.skip("solved")
     def test_신규_아이디_추천_2단계(self):
         from .ex_02 import level2
         
@@ -44,6 +46,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, level2(new_id)) 
 
+    @unittest.skip("solved")
     def test_신규_아이디_추천_3단계(self):
         from .ex_02 import level3
         
@@ -53,6 +56,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, level3(new_id))
         
+    @unittest.skip("solved")
     def test_신규_아이디_추천_4단계(self):
         from .ex_02 import level4
         
@@ -62,6 +66,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, level4(new_id))
         
+    @unittest.skip("solved")
     def test_신규_아이디_추천_5단계(self):
         from .ex_02 import level5
         
@@ -71,6 +76,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, level5(new_id))
         
+    @unittest.skip("solved")
     def test_신규_아이디_추천_6단계(self):
         from .ex_02 import level6
         
@@ -80,6 +86,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, level6(new_id))
         
+    @unittest.skip("solved")
     def test_신규_아이디_추천_7단계(self):
         from .ex_02 import level7
         
@@ -89,6 +96,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, level7(new_id))
 
+    @unittest.skip("solved")
     def test_신규_아이디_추천_01(self):
         from .ex_02 import solution
         
@@ -98,6 +106,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, solution(new_id))
 
+    @unittest.skip("solved")
     def test_신규_아이디_추천_02(self):
         from .ex_02 import solution
         
@@ -107,6 +116,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, solution(new_id))
 
+    @unittest.skip("solved")
     def test_신규_아이디_추천_03(self):
         from .ex_02 import solution
         
@@ -116,7 +126,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, solution(new_id))
         
-        
+    @unittest.skip("solved")
     def test_신규_아이디_추천_04(self):
         from .ex_02 import solution
         
@@ -126,6 +136,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(result, solution(new_id))
         
+    @unittest.skip("solved")
     def test_신규_아이디_추천_05(self):
         from .ex_02 import solution
         
