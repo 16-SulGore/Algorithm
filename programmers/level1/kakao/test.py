@@ -156,6 +156,7 @@ class Test(unittest.TestCase):
         for i in range(len(s)):
             self.assertEqual(result[i], solution(s[i]))
             
+    @unittest.skip("solved")
     def test_크레인_인형뽑기_게임(self):
         from .ex_04 import solution
         
@@ -164,3 +165,23 @@ class Test(unittest.TestCase):
         result = 4
         
         self.assertEqual(result, solution(board, moves))
+
+    @unittest.skip("solved")
+    def test_실패율_01(self):
+        from .ex_05 import solution
+        
+        N = 5
+        stages = [2, 1, 2, 6, 2, 4, 3, 3]
+        result = [3,4,2,1,5]
+        
+        self.assertEqual(result, solution(N, stages))
+
+    @unittest.skip("solved")
+    def test_실패율_02(self):
+        from .ex_05 import solution
+        
+        N = 4
+        stages = [4,4,4,4,4]
+        result = [4,1,2,3]
+        
+        self.assertEqual(result, solution(N, stages))
