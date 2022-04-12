@@ -24,17 +24,20 @@ class User:
 
     def popleft_record(self):
         return self.nickname + self.records.popleft().value
-
-def solution(record):
-
-    def parse(record_unit):
-        records = record_unit.split()
-
-        if len(records) == 2:
-            order, user_id = records
-        elif len(records) == 3:
-            order, user_id, nickname = records
-
+    
+def split_records(records):
+    order, user_id, nickname = "", "", ""
+    
+    if len(records) == 2:
+        order, user_id = records
+    elif len(records) == 3:
+        order, user_id, nickname = records
+    
+    return order, user_id, nickname
+            
+def parse(record_unit, user_table, answer_list):
+        order, user_id, nickname = split_records(record_unit.split())
+        
         if order == OrderType.Enter.name:
             if user_id in user_table:
                 user_table[user_id].enter(nickname)
@@ -50,9 +53,13 @@ def solution(record):
         elif order == OrderType.Change.name:
             user_table[user_id].change(nickname)
 
+def get_result(user_table, answer_list):
+    return [user_table[user_id].popleft_record() for user_id in answer_list]
+
+def solution(record):
     user_table = {}
     answer_list = []
     for record_unit in record:
-        parse(record_unit)
+        parse(record_unit, user_table, answer_list)
 
-    return [user_table[user_id].popleft_record() for user_id in answer_list]
+    return get_result(user_table, answer_list)
