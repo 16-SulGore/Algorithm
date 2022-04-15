@@ -26,11 +26,3 @@ def solution(orders, course):
                 set_menu_order = ''.join(sorted(set_menu))
                 count_set_menu(set_menu_counter, set_menu_order, now_course)
     return decide_set_menu(set_menu_counter)
-            
-
-
-orders = ["XYZ", "XWY", "WXA"]
-course = [2, 3, 4]
-
-# print(230 & 160 & 162)
-print(solution(orders, course))
