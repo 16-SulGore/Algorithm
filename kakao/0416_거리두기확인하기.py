@@ -7,21 +7,19 @@ def solution(places):
     return [int(is_good(place)) for place in places]
 
 def is_good(place):
-    stack = [[x, y] for x in range(ROW) for y in range(COL) if place[x][y] == "P"]
-    visited = [[False for __ in range(ROW)] for _ in range(COL)]
-    can_go = lambda x, y: 0 <= x < COL and 0 <= y < ROW and place[x][y] != "X"
+    stack = [[x, y, []] for x in range(ROW) for y in range(COL) if place[x][y] == "P"]
+    can_go = lambda x, y, visited: 0 <= x < COL and 0 <= y < ROW and [x, y] not in visited
 
     while stack:
-        x, y = stack.pop()
+        x, y, visited = stack.pop()
         
         for i in range(4):
-            if not visited[x][y]:
-                visited[x][y] = True
-                nx, ny = x + dx[i], y + dy[i]
-                
-                if can_go(nx, ny):
-                    if place[nx][ny] == "P":
-                        return False 
-                    elif place[nx][ny] == "O" and place[x][y] == "P":
-                        stack.append([nx, ny])
+            visited.append([x, y])
+            nx, ny = x + dx[i], y + dy[i]
+            
+            if can_go(nx, ny, visited):
+                if place[nx][ny] == "P": 
+                    return False
+                elif place[nx][ny] == "O" and place[x][y] == "P":
+                    stack.append([nx, ny, visited])
     return True
