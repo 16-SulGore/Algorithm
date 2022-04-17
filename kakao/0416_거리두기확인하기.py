@@ -1,5 +1,4 @@
-dx = (1, -1, 0, 0)
-dy = (0, 0, 1, -1)
+directions = ((1, 0), (-1, 0), (0, 1), (0, -1))
 ROW, COL = 5, 5
 
 
@@ -13,9 +12,9 @@ def is_good(place):
     while stack:
         x, y, visited = stack.pop()
         
-        for i in range(4):
+        for dx, dy in directions:
             visited.append([x, y])
-            nx, ny = x + dx[i], y + dy[i]
+            nx, ny = x + dx, y + dy
             
             if can_go(nx, ny, visited):
                 if place[nx][ny] == "P": 
