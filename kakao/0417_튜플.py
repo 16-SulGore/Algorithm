@@ -13,14 +13,19 @@ class CustomList:
         sorted_max_list, sorted_min_list = self.__sort_self_and_other(other)
         result = []
 
+        element_in_max = sorted_max_list.pop()
+        element_in_min = sorted_min_list.pop()
         while sorted_min_list:
-            element_self = sorted_max_list.pop()
-            element_other = sorted_min_list.pop()
+            if element_in_max != element_in_min:
+                result.append(element_in_max)
+            else:
+                element_in_min = sorted_min_list.pop()
+                
+            element_in_max = sorted_max_list.pop()
+        
+        print(self.elements, other.elements, result + sorted_max_list)
 
-            if element_self != element_other:
-                return CustomList([element_self])
-
-        return CustomList([sorted_max_list.pop()])
+        return CustomList(result + sorted_max_list)
     
     def __sort_self_and_other(self, other):
         key= lambda a: len(a) 
@@ -42,18 +47,9 @@ def solution(s):
     return reduce(lambda acc, cur : acc + cur, sorted(parse(s))).elements
 
 def parse(str):
-    stack = []
-    end = ""
-
-    for char in str[1:-1]:
-        if char == "{":
-            stack.append(CustomList())
-
-        elif char == "}" or char == "," and end:
-            stack[-1].append(int(end))
-            end = ""
-
-        elif char.isdigit():
-            end += char
+    splited_list = str[2:-2].split("},{")
     
+    stack = []
+    for splited in splited_list:
+        stack.append(CustomList(list(map(int, splited.split(",")))))
     return stack
