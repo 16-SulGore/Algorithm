@@ -11,28 +11,22 @@ class CustomList:
 
     def __sub__(self, other):
         sorted_max_list, sorted_min_list = self.__sort_self_and_other(other)
-        result = []
 
-        element_in_max = sorted_max_list.pop()
-        element_in_min = sorted_min_list.pop()
         while sorted_min_list:
-            if element_in_max != element_in_min:
-                result.append(element_in_max)
-            else:
-                element_in_min = sorted_min_list.pop()
-                
-            element_in_max = sorted_max_list.pop()
-        
-        print(self.elements, other.elements, result + sorted_max_list)
+            element_self = sorted_max_list.pop()
+            element_other = sorted_min_list.pop()
 
-        return CustomList(result + sorted_max_list)
+            if element_self != element_other:
+                return CustomList([element_self])
+
+        return CustomList([sorted_max_list.pop()])
     
     def __sort_self_and_other(self, other):
         key= lambda a: len(a) 
         sorted_list = [sorted(self.elements), sorted(other.elements)]
 
         return max(sorted_list, key= key), min(sorted_list, key= key)
-    
+
     def __lt__(self, other):
         return len(self.elements) < len(other.elements)
     
