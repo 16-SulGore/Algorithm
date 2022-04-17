@@ -36,9 +36,6 @@ class CustomList:
     def __lt__(self, other):
         return len(self.elements) < len(other.elements)
     
-    def __str__(self):
-        return self.elements.__str__()
-    
     def append(self, char):
         self.elements.append(char)
 
@@ -48,8 +45,6 @@ def solution(s):
 
 def parse(str):
     splited_list = str[2:-2].split("},{")
-    
-    stack = []
-    for splited in splited_list:
-        stack.append(CustomList(list(map(int, splited.split(",")))))
-    return stack
+    customList = lambda splited: CustomList(list(map(int, splited.split(","))))
+
+    return [customList(splited) for splited in splited_list]
