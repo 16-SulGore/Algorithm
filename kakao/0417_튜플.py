@@ -26,19 +26,16 @@ class CustomList:
         sorted_list = [sorted(self.elements), sorted(other.elements)]
 
         return max(sorted_list, key= key), min(sorted_list, key= key)
-
-    def __lt__(self, other):
-        return len(self.elements) < len(other.elements)
     
     def append(self, char):
         self.elements.append(char)
 
 def solution(s):
     # sum -> TypeError: unsupported operand type(s) for +: 'int' and 'CustomList'
-    return reduce(lambda acc, cur : acc + cur, sorted(parse(s))).elements
+    return reduce(lambda acc, cur : acc + cur, parse(s)).elements
 
 def parse(str):
     splited_list = str[2:-2].split("},{")
     customList = lambda splited: CustomList(list(map(int, splited.split(","))))
 
-    return [customList(splited) for splited in splited_list]
+    return sorted([customList(splited) for splited in splited_list], key = lambda x: len(x.elements))
