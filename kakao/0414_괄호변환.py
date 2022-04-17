@@ -56,7 +56,4 @@ def is_right_str(str):
     return len(stack) == 0
 
 def reverse_bracket(str):
-    result = ""
-    for char in str:
-        result += Bracket.CLOSE.value if char == Bracket.OPEN.value else Bracket.OPEN.value
-    return result
+    return ''.join([Bracket.CLOSE.value if char == Bracket.OPEN.value else Bracket.OPEN.value for char in str])
