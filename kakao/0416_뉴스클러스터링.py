@@ -35,6 +35,6 @@ def get_intersection_count(set1, set2):
                 intersection_count += 1
                 visited_set1[i] = True
                 visited_set2[j] = True
-                continue
+                break
     
     return intersection_count
