@@ -37,7 +37,7 @@ def split_str(str):
         if is_balanced_str(balance_str):
             return balance_str, str[i + 1:]
         
-    return balance_str
+    return balance_str, str
 
 def is_balanced_str(str):
     return str.count(Bracket.CLOSE.value) == str.count(Bracket.OPEN.value)
