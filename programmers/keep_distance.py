@@ -17,19 +17,19 @@ def keep_distance(place):
         visited = [[False for _ in range(5)] for _ in range(5)]
         visited[person[0]][person[1]] = True
         while people:
-            x, y, z = people.popleft()
+            x, y, distance = people.popleft()
             for n in range(4):
                 nx = dx[n] + x
                 ny = dy[n] + y
 
                 if nx < 0 or ny < 0 or nx > 4 or ny > 4:
                     continue
-                elif not visited[nx][ny] and z < 2:
+                elif not visited[nx][ny] and distance < 2:
                     if place[nx][ny] == 'P':
                         return False
                     elif place[nx][ny] == 'O':
                         visited[nx][ny] = True
-                        people.append([nx, ny, z + 1])
+                        people.append([nx, ny, distance + 1])
     return True
 
 def solution(places):
