@@ -14,6 +14,7 @@ def solution(relation):
     answer = 0
     for i in range(len(all_combination)):
         if not visited[i]:
+            visited[i] = 1
             if is_unique(all_combination[i], relation):
                 answer += 1
                 check_minimality(all_combination, visited, i)
