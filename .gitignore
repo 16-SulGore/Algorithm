@@ -1,2 +1,11 @@
 __pycache__/
 *.__pycache__
+
+*/.idea/
+.idea/
+*.iml
+*/.gradle/
+*/gradle/
+
+*/build/
+build/
