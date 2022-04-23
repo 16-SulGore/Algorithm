@@ -12,5 +12,3 @@ def solution(msg):
         msg_dict[new_word] = len(msg_dict) + 1
         start = end
     return answer
-
-print(solution("KAKAO"))
