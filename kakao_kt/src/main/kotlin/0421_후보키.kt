@@ -1,6 +1,6 @@
 class Solution {
 
-    private val candidateKeys : MutableList<List<Int>> = mutableListOf()
+    private val candidateKeys: MutableList<List<Int>> = mutableListOf()
 
     private lateinit var relation: Array<Array<String>>
 
@@ -17,17 +17,12 @@ class Solution {
         .let { keyList -> keyList.size == keyList.toSet().size }
 
 
-    private fun removeUnminimalityKey(key: List<Int>) {
-        candidateKeys.forEachIndexed { i, candidateKey ->
-            if (candidateKey.containsAll(key)) {
-                candidateKeys.removeAt(i)
-                return
-            } else if(key.containsAll(candidateKey)) {
-                return
-            }
+    private fun removeUnminimalityKey(key: List<Int>) = candidateKeys.forEachIndexed { i, candidateKey ->
+        when {
+            candidateKey.containsAll(key) -> candidateKeys.removeAt(i)
+            key.containsAll(candidateKey) -> Unit
+            else -> candidateKeys.add(key)
         }
-
-        candidateKeys.add(key)
     }
 }
 
