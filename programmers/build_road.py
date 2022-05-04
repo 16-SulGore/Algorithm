@@ -3,7 +3,6 @@ from collections import deque
 
 dx = [-1,0,1,0]
 dy = [0,-1,0,1]
-NWSE = ['n','w','s','e']
 
 def solution(board):
     answer = -1
@@ -25,10 +24,10 @@ def solution(board):
                 continue
             if board[nx][ny]:
                 continue
-            cost = c + (100 if d == '.' or d == NWSE[i] else 600)
+            cost = c + (100 if d == '.' or d == i else 600)
             if visited[nx][ny] != -1 and visited[nx][ny] < cost - 300:
                 continue
-            q.append([nx,ny,NWSE[i],cost])
+            q.append([nx,ny,i,cost])
             visited[nx][ny] = cost
 
     return answer
