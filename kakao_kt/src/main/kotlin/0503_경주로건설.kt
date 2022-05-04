@@ -6,7 +6,7 @@ data class Position(
     val directionIndex: Int
 )
 
-class Solution {
+class `0503_경주로건설` {
 
     private lateinit var board: Array<IntArray>
 

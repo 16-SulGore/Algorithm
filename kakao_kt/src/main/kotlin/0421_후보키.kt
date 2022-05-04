@@ -1,4 +1,4 @@
-class Solution {
+class `0421_후보키` {
 
     private val candidateKeys: MutableList<List<Int>> = mutableListOf()
 
