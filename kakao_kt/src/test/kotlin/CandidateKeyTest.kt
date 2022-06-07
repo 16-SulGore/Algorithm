@@ -4,7 +4,7 @@ import org.junit.Assert.*
 
 class CandidateKeyTest {
 
-    private val solution = Solution()
+    private val solution = `0504_광고삽입`()
 
     @Test
     fun `입출력 예제 1번`() {
