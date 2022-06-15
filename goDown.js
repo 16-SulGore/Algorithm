@@ -5,65 +5,41 @@ class goDown {
     this.N = 0;
     this.lineNum = 0;
 
-    this.maxDp = [];
-    this.minDp = [];
+    this.MAX = [0, 0, 0];
+    this.MIN = [0, 0, 0];
   }
 
   getInput(line) {
     if (this.lineNum === 0) {
       this.N = Number(line);
+      this.lineNum += 1;
     } else if (this.lineNum <= this.N) {
       const inputLine = line.split(" ");
-      this.maxDp.push(inputLine.map((val) => Number(val)));
-      this.minDp.push(inputLine.map((val) => Number(val)));
+
+      const x = Number(inputLine[0]);
+      const y = Number(inputLine[1]);
+      const z = Number(inputLine[2]);
+
+      let p = Math.max(...this.MAX.slice(0, 2));
+      let q = Math.max(...this.MAX.slice(1));
+
+      this.MAX[0] = x + p;
+      this.MAX[1] = y + Math.max(p, q);
+      this.MAX[2] = z + q;
+
+      p = Math.min(...this.MIN.slice(0, 2));
+      q = Math.min(...this.MIN.slice(1));
+
+      this.MIN[0] = x + p;
+      this.MIN[1] = y + Math.min(p, q);
+      this.MIN[2] = z + q;
     } else {
       throw new Error("Input Error");
     }
-
-    this.lineNum += 1;
-  }
-
-  getMaxDp() {
-    for (let i = 0; i < this.N; i++) {
-      for (let j = 0; j < 3; j++) {
-        let before = [];
-
-        if (i > 0) {
-          if (this.maxDp[i - 1][j - 1]) before.push(this.maxDp[i - 1][j - 1]);
-          if (this.maxDp[i - 1][j]) before.push(this.maxDp[i - 1][j]);
-          if (this.maxDp[i - 1][j + 1]) before.push(this.maxDp[i - 1][j + 1]);
-
-          this.maxDp[i][j] += Math.max(...before);
-        }
-      }
-    }
-    return Math.max(...this.maxDp[this.N - 1]);
-  }
-
-  getMinDp() {
-    for (let i = 0; i < this.N; i++) {
-      for (let j = 0; j < 3; j++) {
-        let before = [];
-
-        if (i > 0) {
-          if (this.minDp[i - 1][j - 1]) before.push(this.minDp[i - 1][j - 1]);
-          if (this.minDp[i - 1][j]) before.push(this.minDp[i - 1][j]);
-          if (this.minDp[i - 1][j + 1]) before.push(this.minDp[i - 1][j + 1]);
-          this.minDp[i][j] += Math.min(...before);
-        }
-      }
-    }
-
-    return Math.min(...this.minDp[this.N - 1]);
   }
 
   solution() {
-    let result = [];
-
-    result.push(this.getMaxDp());
-    result.push(this.getMinDp());
-
-    return result.join(" ");
+    return `${Math.max(...this.MAX)} ${Math.min(...this.MIN)}`;
   }
 }
 
