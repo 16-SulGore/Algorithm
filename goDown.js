@@ -1,5 +1,3 @@
-const readline = require("readline");
-
 class goDown {
   constructor() {
     this.N = 0;
