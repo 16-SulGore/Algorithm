@@ -11,3 +11,6 @@ __pycache__/
 build/
 
 test/
+
+gradlew
+gradlew.bat
